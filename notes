@@ -1,0 +1,73 @@
+https://linuxmint.com/edition.php?id=239
+
+codeshare.io/DFS12c
+
+http://it-akademy.slides.com/morgan_corroyer/linux/live?token=ZrurjxiZ
+
+_________________________________________________________________________________
+Linux: 
+_________________________________________________________________________________
+
+https://fr.wikipedia.org/wiki/Distribution_Linux#D.C3.A9finition
+https://distrowatch.com/?language=FR
+
+Multitâches:   https://github.com/sferey/document/raw/master/Multi-taches.pdf
+FHS:           https://fr.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+CLI/GUI:       http://aya.io/blog/terminal-console-cli/
+
+
+_________________________________________________________________________________
+Commandes Linux:
+__________________________________________________________________________________
+
+Lister les dossiers/fichiers présents dans le répértoire courant: ls
+Paramètre possible de ls : -all qui permet de lister les fichiers et dossiers cachés
+Se déplacer de dossiers en dossiers: cd nomDuDossier
+Revenir en arrière: cd ../   (Le nombre de ../ est le nombre de cran où vous revenez en arrière)
+Création d'un fichier sans écrire dedans: touch nomDuFichier
+Création d'un fichier/modification de contenu d'un fichier où on écrit dedans: nano nomDuFichier
+Création d'un dossier: mkdir nomDuDossier
+Suppression d'un dossier: rm -rf nomDuDossier
+Copier un fichier: nomDuFichier dossierDeDestination
+Déplacer un fichier ou un dossier: mv nomFichier ou nomDossier dossierDeDestination
+Renommer un fichier ou un dossier: nomDossier ou nomFichier nouveauNomFichier ou nouveauNomDossier  (quand il n'existe pas déjà)
+Renseignement sur une commande: nomDeLaCommande --help ou man commande
+Savoir où on se situe: pwd
+Lire le contenu d'un fichier: cat nomDuFichier
+Chercher un mot qui retourne la/les ligne/s qui contient/nnent le mot: grep -r "motQueVousRecherchez"  =>
+(pas obligatoire si vous ne spécifiez pas un fichier) nomDuFichierCiblé
+Commande très utile aussi: sed 
+Nettoyer le terminal: clear
+
+L'extension des scripts en bash est le .sh
+Pour le lancer, on utilise: bash nomDuScript.sh
+
+
+Chemin relatif ou absolu: https://www.alsacreations.com/astuce/lire/78-quelle-est-la-diffrence-entre-les-chemins-relatifs-et-absolus.html
+
+
+
+_________________________________________________________________
+VIRTUALBOX ET VAGRANT:
+
+Création du Vagrantfile: vagrant init
+nano du vagrantfile et remplacer: 
+config.vm.box = "base" par config.vm.box = "ubuntu/xenial64"
+# config.vm.network "private_network", ip: "192.168.33.10" par config.vm.network "private_network", ip: "192.168.33.10"
+# config.vm.synced_folder "../data", "/vagrant" par config.vm.synced_folder "data", "/var/www/html"
+
+Une fois le tout changé, lancer la vagrant avec: vagrant up
+Se connecter à la vagrant en SSH: vagrant ssh
+Mise à jour des paquets: sudo apt-get update
+Installer un paquet: sudo apt-get install nomDuPaquet
+Paquets à installer: apache2 / mysql-server / php7.0
+Arrêter une vagrant: vagrant halt
+
+
+GIT:
+
+Initialiser un dépot Git: git init
+Voir l'état des fichiers: git status
+Ajouter des fichiers ou dossiers: git add nomFichier
+Enregistrer les ajouts ou modifications de fichiers dans votre dépot Git: git commit
+POUSSER les ajouts/modifications sur le Github: git push nomRemote nomBranche
